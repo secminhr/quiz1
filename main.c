@@ -67,9 +67,7 @@ int main(int argc, char **argv) {
     quicksort(&list);
     list_display(list);
 
-    if (!list_is_ordered(list))
-        return EXIT_FAILURE;
-
+    int return_val = list_is_ordered(list) ? EXIT_SUCCESS : EXIT_FAILURE;
     list_free(&list);
-    return EXIT_SUCCESS;
+    return return_val;
 }
